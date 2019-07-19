@@ -6,21 +6,59 @@
  * @flow
  */
 
-import React, { Fragment } from "react";
-import {
-  View,
-  StyleSheet,
-} from "react-native";
-
+import React from "react";
+import Feed from './src/views/feed.js'
+import Add from './src/views/add'
+import Explore from './src/views/explore.js'
+import Notifications from './src/views/notifications.js'
+import Profile from './src/views/profile.js'
 import { createBottomTabNavigator, createAppContainer } from "react-navigation";
+import { createStore } from 'redux'
+import rootReducer from './src/reducers'
+import {Provider} from "react-redux"
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+import {saveState} from './src/localStorage'
+import { PersistGate } from 'redux-persist/integration/react'
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import FirstLevel from './src/navigation/firstLevel';
+
+
+
+const persistConfig = {
+  key: 'root',
+  storage,
+};
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+const store = createStore(persistedReducer);
+const persists = persistStore(store);3
+
+//Uncomment to reset state
+//(async () => { await persists.purge(); })();
+
+store.subscribe(() => {
+  saveState({
+    goals: store.getState()
+  });
+});
 
 
 export default class App extends React.Component {
   render() {
     return (
-        <View> </View>
-    );
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persists}>
+            <FirstLevel/>
+          </PersistGate>
+        </Provider>
+    );}
   }
-}
+
+
+
+
+
+
+
 
 
