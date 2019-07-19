@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import {viewStyles} from './viewTheme';
 
 class Feed extends Component {
+
     render() {
         return (
             <View style = {viewStyles.backgroundMainGlobal}>
