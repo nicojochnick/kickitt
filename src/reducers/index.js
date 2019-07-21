@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import activities from './activity'
+import activities from './activityReducer'
 
 const appReducer = combineReducers({activities:activities});
 

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-native-elements';
+import {View} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Badge, Icon, withBadge } from 'react-native-elements'
 import ThirdLevel from './thirdLevel'
 import {createStackNavigator, createAppContainer, createBottomTabNavigator} from 'react-navigation';
 import Chat from '../views/chat'
@@ -53,6 +54,9 @@ const DrawerNavigator = createBottomTabNavigator(
     }
 );
 
+const BadgedIcon = withBadge(1)(Icon);
+
+
 const AppNavigator = createStackNavigator(
     {
         main: DrawerNavigator,
@@ -67,18 +71,15 @@ const AppNavigator = createStackNavigator(
                 backgroundColor: 'white',
             },
             headerRight: (
-                <Button
-                    icon = {
-                        <Ionicons
-                        name="ios-chatbubbles"
-                        size={30}
-                        color="#3678FF"
-                        />
-                    }
-                    onPress={() => console.log("press")}
-                    type="clear"
 
+                <View style = {{paddingRight: 20}}>
+                <BadgedIcon
+                    badStyle
+                    type="ionicon"
+                    name="ios-chatbubbles"
+                    color = '#3678FF'
                 />
+                </View>
             ),
         },
     });

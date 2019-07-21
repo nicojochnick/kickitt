@@ -1,16 +1,26 @@
 import React, {Component} from 'react';
-import {View, Text} from "react-native";
-
+import {ScrollView, View, FlatList} from "react-native";
 import PropTypes from 'prop-types';
 import {viewStyles} from './viewTheme';
+import CreateActivityStatus from '../components/createActivityStatus';
+import TrendingBoard from '../components/trendingBoard';
+import ActivityStatus from '../components/activityStatus'
 
 class Feed extends Component {
 
     render() {
         return (
-            <View style = {viewStyles.backgroundMainGlobal}>
+            <ScrollView style = {viewStyles.backgroundMainGlobal}>
+                <View style = {{height: 300}}>
+                <TrendingBoard/>
+                </View>
+                <CreateActivityStatus/>
+                <ActivityStatus/>
+                <FlatList>
 
-            </View>
+                </FlatList>
+            </ScrollView>
+
         );
     }
 }

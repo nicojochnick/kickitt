@@ -18,6 +18,8 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* kickittTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* kickittTests.m */; };
 		3605EF4322E18E3200B9134C /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3605EF2B22E18D3900B9134C /* Ionicons.ttf */; };
+		3605EF4422E2925F00B9134C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3605EF2E22E18D3900B9134C /* FontAwesome.ttf */; };
+		3605EF4522E2926500B9134C /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3605EF3222E18D3900B9134C /* MaterialIcons.ttf */; };
 		877B45F755FE74B9A1F457D1 /* libPods-kickitt-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9C5D3C8A7A4932332AC391 /* libPods-kickitt-tvOS.a */; };
 		94484E3645208D6CF3E3F741 /* libPods-kickittTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEDF2B863DBB8600E08EA15 /* libPods-kickittTests.a */; };
 		FA1E4D3151D7669355E08ACD /* libPods-kickitt-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F03E11534E9AF8B58BC7951B /* libPods-kickitt-tvOSTests.a */; };
@@ -386,6 +388,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3605EF4522E2926500B9134C /* MaterialIcons.ttf in Resources */,
+				3605EF4422E2925F00B9134C /* FontAwesome.ttf in Resources */,
 				3605EF4322E18E3200B9134C /* Ionicons.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
