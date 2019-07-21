@@ -1,14 +1,18 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Text, View} from 'react-native';
+import {Text, ScrollView} from 'react-native';
 import {viewStyles} from './viewTheme';
+import ActivityPreview from '../components/activityPreview'
 
 class Explore extends Component {
     render() {
         return (
-            <View style = {viewStyles.backgroundMainGlobal}>
-
-            </View>
+            <ScrollView style = {viewStyles.backgroundMainGlobal}>
+                <ActivityPreview/>
+                <ActivityPreview/>
+                <ActivityPreview/>
+                <ActivityPreview/>
+            </ScrollView>
         );
     }
 }
