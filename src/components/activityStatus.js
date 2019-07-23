@@ -26,11 +26,11 @@ class ActivityStatus extends Component {
                         rounded
                         source={{
                             uri:
-                                'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+                                'https://i.pravatar.cc/300',
                         }}
                     />
                     <View style = {{flex: 1, marginLeft: 10}}>
-                        <Text style={ {fontWeight: "bold"}}> Jake is down for </Text>
+                        <Text style={ {fontWeight: "bold"}}> username is down for </Text>
                     </View>
                 </View>
                 <View style = {{height:150}}>
@@ -47,7 +47,6 @@ class ActivityStatus extends Component {
                         selectedIndex={selectedIndex}
                         buttons={buttons}
                         containerStyle={{height: 25, flex: 1, borderWidth: 0}}
-                        buttonStyle = {{fontSize: 5}}
                     />
 
                 <Button

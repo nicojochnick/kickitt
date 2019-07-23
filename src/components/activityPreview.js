@@ -5,7 +5,7 @@ import { Card, ListItem, Button, Icon} from 'react-native-elements'
 import PropTypes from 'prop-types';
 
 const fakeData = {
-    name: ["Berkeley Fire Trails"],
+    name: ["Activity"],
     image: ['../assets/developmentAssets/natureTrails.jpg'],
     fans: [10],
     popularTimes: ["4-6"]
@@ -20,7 +20,7 @@ class ActivityPreview extends Component {
                 titleStyle = {{padding: 0, color:'#3678FF' }}
                 containerStyle = {{borderRadius: 6,shadowOpacity:0.2,
                     shadowColor: "black", shadowOffset:{width: 0, height: 2}, margin: 10}}
-                image={require('../assets/developmentAssets/natureTrails.jpg')}
+                image={{uri: 'https://picsum.photos/400/500'}}
                 imageStyle = {{ overflow: "hidden", borderTopLeftRadius: 6, borderTopRightRadius: 6}}
                 imageProps = {{resizeMode: "cover", overflow:"hidden"}}
                 featuredTitle = {fakeData.name + '🔥'}

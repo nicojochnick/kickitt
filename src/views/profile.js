@@ -1,16 +1,29 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Text, View} from 'react-native';
+import {Text, ScrollView, View} from 'react-native';
 import {viewStyles} from './viewTheme';
+import FriendBoard from '../components/friendBoard';
+import {Divider} from 'react-native-elements';
+import UserTopActivities from '../components/userTopActivities';
+import ProfileHeader from '../components/profileHeader';
+import ActivityStatus from '../components/activityStatus';
 
 
 class Profile extends Component {
     render() {
         return (
-            <View style = {viewStyles.backgroundMainGlobal}>
-
-            </View>
-        );
+            <ScrollView style = {viewStyles.backgroundMainGlobal}>
+                <View style = {{ flex: 1, backgroundColor: '#3678FF',}}>
+                    <ProfileHeader/>
+                    <Text style = {{color: 'white', fontWeight: "bold", fontSize: 20, padding:10, textAlign: "center"}}> Favorites </Text>
+                    <Divider/>
+                    <UserTopActivities style = {{height: 50}}/>
+                </View>
+                <View style = {{marginBottom: 10, flex: 1}}>
+                </View>
+                <ActivityStatus/>
+            </ScrollView>
+        )
     }
 }
 

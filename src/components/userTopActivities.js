@@ -7,9 +7,9 @@ const fakeData = [{key: 'Warriors Game'}, {key: 'Kygo Concert', }, {key:'RSF'}, 
 class UserTopActivities extends Component {
     render() {
         return (
-            <View>
+            <View style = {{height: 200}}>
                 < FlatList
-                    style = {{alignContent: "center", marginTop: 10, marginBottom:2}}
+                    style = {{alignContent: "center", marginBottom:2}}
                     data = {fakeData}
                     renderItem={({item}) => <Activity name = {item.key} /> }
                     nestedScrollEnabled = {true}
