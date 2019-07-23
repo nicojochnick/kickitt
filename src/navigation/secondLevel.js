@@ -11,6 +11,9 @@ import Explore from '../views/explore';
 import Add from '../views/add';
 import Notifications from '../views/notifications';
 import Profile from '../views/profile';
+import Loading from '../views/loading';
+import SignUp from '../views/auth/signUp';
+import Login from '../views/login'
 
 class SecondLevel extends Component {
     static navigationOptions = {
@@ -53,16 +56,18 @@ const DrawerNavigator = createBottomTabNavigator(
         },
     }
 );
-
 const BadgedIcon = withBadge(1)(Icon);
-
 
 const AppNavigator = createStackNavigator(
     {
         main: DrawerNavigator,
-        chat: Chat
+        chat: Chat,
+        loading: Loading,
+        signup: SignUp,
+        login: Login,
+
     }, {
-        initialRouteName: "main",
+        initialRouteName: "loading",
         /* The header config from HomeScreen is now here */
         defaultNavigationOptions: {
             title: 'Kickitt',
@@ -83,11 +88,6 @@ const AppNavigator = createStackNavigator(
             ),
         },
     });
-
-
-
-
-
 
 
 

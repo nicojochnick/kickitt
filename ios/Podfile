@@ -3,9 +3,15 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 target 'kickitt' do
   # Pods for kickitt
-  pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
+
   pod 'Firebase/Core', '~> 6.3.0'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Storage'
+
+
   pod 'React', :path => '../node_modules/react-native/'
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
   pod 'React-Core', :path => '../node_modules/react-native/React'
   pod 'React-DevSupport', :path => '../node_modules/react-native/React'
   pod 'React-fishhook', :path => '../node_modules/react-native/Libraries/fishhook'
@@ -32,10 +38,6 @@ target 'kickitt' do
   pod 'Firebase/Analytics'
 
 
-
-
-  pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
-
   target 'kickittTests' do
     inherit! :search_paths
     # Pods for testing
@@ -53,3 +55,4 @@ target 'kickitt-tvOS' do
   end
 
 end
+
