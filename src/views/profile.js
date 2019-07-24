@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Text, ScrollView, View} from 'react-native';
 import {viewStyles} from './viewTheme';
 import FriendBoard from '../components/friendBoard';
+import {Button} from 'react-native-elements'
 import {Divider} from 'react-native-elements';
 import UserTopActivities from '../components/userTopActivities';
 import ProfileHeader from '../components/profileHeader';
@@ -16,6 +17,11 @@ class Profile extends Component {
                 <View style = {{ flex: 1, backgroundColor: '#3678FF',}}>
                     <ProfileHeader/>
                     <Text style = {{color: 'white', fontWeight: "bold", fontSize: 20, padding:10, textAlign: "center"}}> Favorites </Text>
+                    <Button
+                        title="Sign Out"
+                        buttonStyle = {{backgroundColor: "#00FA9A"}}
+                        onPress = {() => this.props.navigation.navigate("SignUp")}
+                    />
                     <Divider/>
                     <UserTopActivities style = {{height: 50}}/>
                 </View>

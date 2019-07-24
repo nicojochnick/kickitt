@@ -4,7 +4,14 @@ import {View} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Badge, Icon, withBadge } from 'react-native-elements'
 import ThirdLevel from './thirdLevel'
-import {createStackNavigator, createAppContainer, createBottomTabNavigator} from 'react-navigation';
+import {
+    createStackNavigator,
+    createAppContainer,
+    createSwitchNavigator,
+    createBottomTabNavigator,
+    NavigationScreenProp as navigation,
+} from 'react-navigation';
+
 import Chat from '../views/chat'
 import Feed from '../views/feed';
 import Explore from '../views/explore';
@@ -19,7 +26,6 @@ class SecondLevel extends Component {
     static navigationOptions = {
         title: 'Home',
     };
-
     render() {
         return (
             <ThirdLevel/>
@@ -56,18 +62,16 @@ const DrawerNavigator = createBottomTabNavigator(
         },
     }
 );
+
 const BadgedIcon = withBadge(1)(Icon);
 
-const AppNavigator = createStackNavigator(
+const AppStack = createStackNavigator(
     {
         main: DrawerNavigator,
         chat: Chat,
-        loading: Loading,
-        signup: SignUp,
-        login: Login,
 
     }, {
-        initialRouteName: "loading",
+        initialRouteName: "main",
         /* The header config from HomeScreen is now here */
         defaultNavigationOptions: {
             title: 'Kickitt',
@@ -75,8 +79,8 @@ const AppNavigator = createStackNavigator(
             headerStyle: {
                 backgroundColor: 'white',
             },
-            headerRight: (
 
+            headerRight: (
                 <View style = {{paddingRight: 20}}>
                 <BadgedIcon
                     badStyle
@@ -89,10 +93,22 @@ const AppNavigator = createStackNavigator(
         },
     });
 
+const AuthStack = createStackNavigator({
+    Login: Login,
+    SignUp: SignUp
+},{
+    initialRouteName: "SignUp"
+});
 
-
-
-const AppContainer = createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(createSwitchNavigator(
+    {
+        AuthLoading: Loading,
+        App: AppStack,
+        Auth: AuthStack,
+    }, {
+        initialRouteName: "AuthLoading"
+    }
+));
 
 export default AppContainer;
 

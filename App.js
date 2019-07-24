@@ -22,6 +22,8 @@ import {saveState} from './src/localStorage'
 import { PersistGate } from 'redux-persist/integration/react'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FirstLevel from './src/navigation/firstLevel';
+import firebase from 'react-native-firebase'
+
 
 
 
@@ -31,7 +33,7 @@ const persistConfig = {
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 const store = createStore(persistedReducer);
-const persists = persistStore(store);3
+const persists = persistStore(store);
 
 //Uncomment to reset state
 //(async () => { await persists.purge(); })();
@@ -53,8 +55,6 @@ export default class App extends React.Component {
         </Provider>
     );}
   }
-
-
 
 
 

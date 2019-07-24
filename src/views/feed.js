@@ -5,6 +5,7 @@ import {viewStyles} from './viewTheme';
 import CreateActivityStatus from '../components/createActivityStatus';
 import TrendingBoard from '../components/trendingBoard';
 import ActivityStatus from '../components/activityStatus'
+import {Button} from 'react-native'
 
 class Feed extends Component {
 
@@ -24,6 +25,7 @@ class Feed extends Component {
         );
     }
 }
+
 
 Feed.propTypes = {};
 
