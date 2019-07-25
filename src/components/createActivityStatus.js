@@ -20,10 +20,12 @@ class CreateActivityStatus extends Component {
         const buttons = ['Warriors Game', 'Kygo Concert', 'Fire Trails'];
         const { selectedIndex } = this.state;
         return (
-            <Card containerStyle ={{borderRadius: 6}}>
+            <Card containerStyle ={{borderWidth: 0, borderRadius: 6, backgroundColor: "#3A74F5", padding: 8}}>
                 <View style = {{flexDirection: "row"}}>
                 <Avatar
                     rounded
+                    size = "medium"
+                    avatarStyle = {{borderWidth: 2, borderRadius: 100, borderColor: "white", shadowOpacity: 1, shadowColor: "black"}}
                     source={{
                         uri:
                             'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
@@ -32,22 +34,31 @@ class CreateActivityStatus extends Component {
                 <View style = {{flex: 1, marginLeft: 10}}>
                 <Input
                     placeholder = "what do you want to do?"
-                    placeholderTextColor = {"grey"}
+                    inputContainerStyle = {{borderColor:"white"}}
+                    inputStyle = {{color:"white"}}
+                    placeholderTextColor = {"white"}
                     containerStyle={{height: 60}}
                     onChange = {()=> this.setState({ extraOptionsVisible: true })}/>
                 </View>
                 </View>
-                <ButtonGroup
-                    onPress={this.updateIndex}
-                    selectedIndex={selectedIndex}
-                    buttons={buttons}
-                    containerStyle={{height: 50}}
-                />
                     {
                         this.state.extraOptionsVisible
                         ? <View>
-                                <Input placeholder = "when?" placeholderTextColor = {"grey"}/>
-                                <Button style = {{padding: 10}} title = "Add another time"/>
+                                <Input placeholder = "with who?"
+                                       inputStyle = {{color:"white"}}
+                                       placeholderTextColor = {"white"}
+                                       inputContainerStyle = {{borderColor:"white"}}
+                                />
+                                <Input placeholder = "when?"
+                                       inputStyle = {{color:"white"}}
+                                       placeholderTextColor = {"white"}
+                                       inputContainerStyle = {{borderColor:"white"}}
+                                />
+
+                                <Button
+                                    type = {"clear"}
+                                    titleStyle = {{color: "white"}}
+                                    style = {{padding: 10}} title = "+ Add another time"/>
                         </View>
                         :null
                     }

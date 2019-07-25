@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {View} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import LogoHeader from '../components/logoHeader'
 import { Badge, Icon, withBadge } from 'react-native-elements'
 import ThirdLevel from './thirdLevel'
 import {
@@ -55,10 +56,16 @@ const DrawerNavigator = createBottomTabNavigator(
 
                 return <IconComponent style = {{marginTop: 9}} name={iconName}  size={24} color={tintColor} />;
             },
+            drawerBackgroundColor: "black"
+
         }),
         tabBarOptions: {
             activeTintColor: '#3678FF',
             inactiveTintColor: 'gray',
+            style: {
+                backgroundColor: '#353535',
+            },
+
         },
     }
 );
@@ -74,20 +81,15 @@ const AppStack = createStackNavigator(
         initialRouteName: "main",
         /* The header config from HomeScreen is now here */
         defaultNavigationOptions: {
-            title: 'Kickitt',
-            headerTintColor: '#3678FF',
-            headerStyle: {
-                backgroundColor: 'white',
-            },
-
+            headerTransparent: true,
             headerRight: (
                 <View style = {{paddingRight: 20}}>
-                <BadgedIcon
-                    badStyle
-                    type="ionicon"
-                    name="ios-chatbubbles"
-                    color = '#3678FF'
-                />
+                {/*<BadgedIcon*/}
+                {/*    badStyle*/}
+                {/*    type="ionicon"*/}
+                {/*    name="ios-chatbubbles"*/}
+                {/*    color = '#3678FF'*/}
+                {/*/>*/}
                 </View>
             ),
         },

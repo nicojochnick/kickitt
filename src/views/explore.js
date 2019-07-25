@@ -8,6 +8,7 @@ class Explore extends Component {
     render() {
         return (
             <ScrollView style = {viewStyles.backgroundMainGlobal}>
+                <Text style = {viewStyles.headerTitle}> hott<Text style = {[viewStyles.headerTitle, {color: "#FD701E" }]}>rr </Text></Text>
                 <ActivityPreview/>
                 <ActivityPreview/>
                 <ActivityPreview/>

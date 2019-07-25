@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, FlatList} from 'react-native';
-import {Avatar, Card, Input, Button, ButtonGroup} from 'react-native-elements';
+import {Avatar, Card, Input, Button, ButtonGroup, Divider} from 'react-native-elements';
 import PropTypes from 'prop-types';
 import Activity from './activity';
 const fakeData = [{key: 'RSF'}, {key: 'Peets', }, {key:'Fire Trails' }];
@@ -20,38 +20,50 @@ class ActivityStatus extends Component {
         const buttons = ['Today', 'Tomorrow', 'This Week'];
         const { selectedIndex } = this.state;
         return (
-            <Card containerStyle = {{ borderRadius: 6}}>
+            <Card containerStyle = {{ borderRadius: 6, padding: 8}}>
                 <View style = {{flexDirection: "row"}}>
                     <Avatar
+                        size = "small"
                         rounded
                         source={{
                             uri:
                                 'https://i.pravatar.cc/300',
                         }}
+                        avatarStyle = {{borderWidth: 1, borderRadius: 100, borderColor: "lightgrey", shadowOpacity: 1, shadowColor: "black"}}
+
                     />
-                    <View style = {{flex: 1, marginLeft: 10}}>
-                        <Text style={ {fontWeight: "bold"}}> username is down for </Text>
+                    <View style = {{flex: 1, margin: 7}}>
+                        <Text style={ {fontWeight: "300", color: "black", fontSize: 15}}> username is down for... </Text>
                     </View>
                 </View>
                 <View style = {{height:150}}>
+                    <Divider style = {{marginTop: 5, marginBottom: 0}} />
                     < FlatList
-                        style = {{alignContent: "center", marginTop: 10, marginBottom:2}}
+                        style = {{alignContent: "center",}}
                         data = {fakeData}
                         renderItem={({item}) => <Activity name = {item.key} /> }
                         nestedScrollEnabled = {true}
                     />
+                    <Divider style = {{marginBottom: 5, marginTop:0}} />
                 </View>
-                <View style = {{padding: 5}}>
+                <View style = {{flexDirection: "row", justifyContent: "flex-start", alignItems: "center"}}>
+                    <View style = {{flex: 1}}>
                     <ButtonGroup
                         onPress={this.updateIndex}
                         selectedIndex={selectedIndex}
                         buttons={buttons}
-                        containerStyle={{height: 25, flex: 1, borderWidth: 0}}
+                        buttonStyle = {{borderRadius:20, borderWidth: 0, height: 20}}
+                        textStyle = {{fontSize: 14}}
+                        selectedButtonStyle = {{backgroundColor: "white"}}
+                        selectedTextStyle = {{color: "#3A74F5"}}
+                        containerStyle={{height: 25, flex: 1, borderWidth: 0, alignItems: "flex-start", marginLeft: -5}}
                     />
+                    </View>
 
                 <Button
-                    style = {{marginTop: 10, flexDirection: "row", justifyContent: 'flex-end'}}
-                    title = "lets do it!"
+                    style = {{marginTop: 10}}
+                    buttonStyle={{backgroundColor: "#3A74F5", padding:5, borderRadius: 6}}
+                    title = "down"
                 />
 
 

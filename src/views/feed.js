@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ScrollView, View, FlatList} from "react-native";
+import {ScrollView, View, FlatList, Text} from "react-native";
 import PropTypes from 'prop-types';
 import {viewStyles} from './viewTheme';
 import CreateActivityStatus from '../components/createActivityStatus';
@@ -11,14 +11,12 @@ class Feed extends Component {
 
     render() {
         return (
+
             <ScrollView style = {viewStyles.backgroundMainGlobal}>
-                <View style = {{height: 300}}>
-                <TrendingBoard/>
-                </View>
+                <Text style = {viewStyles.headerTitle}> gath<Text style = {[viewStyles.headerTitle, {color: "#3588FD" }]}>rr </Text></Text>
                 <CreateActivityStatus/>
                 <ActivityStatus/>
                 <FlatList>
-
                 </FlatList>
             </ScrollView>
 
